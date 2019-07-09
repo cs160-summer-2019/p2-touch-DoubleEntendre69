@@ -83,8 +83,62 @@
 			</div>
 		</div>
 	</div>
+  
+  
+  
+  
 	<script>
-	  // your solution here
+    
+    //Rotate
+    var rotateBox = document.getElementById('rotate-box');
+    var ro = new Hammer(rotateBox);
+    var r = new Hammer.Rotate();
+    ro.add([r]);
+    ro.on("rotate", function(ev) {
+     rotateBox.textContent="ROTATED BABY";
+    });
+    
+    
+    //Pinch
+    var pinchBox = document.getElementById('pinch-box');
+    var pinching = new Hammer(pinchBox);
+    var p = new Hammer.Pinch();
+    pinching.add([p]);
+    pinching.on("pinch", function(ev) {
+     pinchBox.textContent="Pinch me";
+    });
+    
+    
+    //Press
+    var pressBox = document.getElementById('press-box');
+    var pr = new Hammer(pressBox);
+    pr.on("press", function(ev) {
+      pressBox.textContent="You pressed me bro";
+    });
+    
+    //Pan
+    var panBox = document.getElementById('pan-box');
+    var panning = new Hammer(panBox);
+    panning.on("pan", function(ev) {
+      panBox.textContent="You panned me, yo";
+    });
+    
+    //Tap
+    var tapBox = document.getElementById('tap-box');
+    var mc = new Hammer(tapBox);
+    mc.on("tap", function(ev) {
+      tapBox.textContent="You tapped me hehe";
+    });
+    
+    
+    //Swipe
+    var swipeBox = document.getElementById('swipe-box');
+    var swp = new Hammer(swipeBox);
+    swp.on("swipe", function(ev) {
+      swipeBox.textContent="You swiped";
+    });
+   
+    
   </script>
 </body>
 </html>
